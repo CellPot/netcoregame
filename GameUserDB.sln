@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameUserDB", "GameUserDB\GameUserDB.csproj", "{07CBCED2-52C4-4DE9-A8B8-C49E2A35AB40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07CBCED2-52C4-4DE9-A8B8-C49E2A35AB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CBCED2-52C4-4DE9-A8B8-C49E2A35AB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CBCED2-52C4-4DE9-A8B8-C49E2A35AB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CBCED2-52C4-4DE9-A8B8-C49E2A35AB40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {400908F2-0486-41BC-A510-4730B25AB743}
+	EndGlobalSection
+EndGlobal

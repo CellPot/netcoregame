@@ -1,0 +1,93 @@
+﻿@page "{handler?}"
+@model IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Главная";
+}
+<html>
+<body>
+    <div class="text-center">
+        <h2>Очки: @Model.ScoreMessage</h2>
+
+        <h4>@Model.WinLoseMessage</h4>
+
+        <form method="post">
+            <table class="table-condensed tab-pane text-center " style="margin: auto;">
+                <tr>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but5L" value="150" asp-page-handler="Change5L" disabled=@(Model.ButtonPropList[9].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but5R" value="150" asp-page-handler="Change5R" disabled=@(Model.ButtonPropList[10].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                </tr>
+                <tr>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but4L" value="75" asp-page-handler="Change4L" disabled=@(Model.ButtonPropList[7].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but4R" value="75" asp-page-handler="Change4R" disabled=@(Model.ButtonPropList[8].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                </tr>
+                <tr>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but3L" value="40" asp-page-handler="Change3L" disabled=@(Model.ButtonPropList[5].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but3R" value="40" asp-page-handler="Change3R" disabled=@(Model.ButtonPropList[6].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                </tr>
+                <tr>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but2L" value="20" asp-page-handler="Change2L" disabled=@(Model.ButtonPropList[3].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but2R" value="20" asp-page-handler="Change2R" disabled=@(Model.ButtonPropList[4].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                </tr>
+                <tr>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but1L" value="10" asp-page-handler="Change1L" disabled=@(Model.ButtonPropList[1].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                    <td><input class="btn btn-lg btn-info" type="submit" id="but1R" value="10" asp-page-handler="Change1R" disabled=@(Model.ButtonPropList[2].Disabled ? "disabled" : null) onclick="ButDis(this)" /></td>
+                </tr>
+
+            </table>
+            <input id="Submit1" type="submit" asp-page-handler="Start" class="btn btn-warning btn-lg" asp-for="MainButMessage" disabled=@(Model.ButtonPropList[0].Disabled ? "disabled" : null) onclick="ButDis(this)" />
+        </form>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+    const ButDis = async (button) =>
+    {
+        var obj = button;
+        await delay(5);
+        if (obj.id == "Submit1") {
+            obj.disabled = "disabled";
+        }
+        else if (obj.id=="but1L") {            
+            obj.disabled = "disabled";
+            document.getElementById("but1R").disabled = "disabled";
+        }
+        else if (obj.id=="but1R") {            
+            obj.disabled = "disabled";
+            document.getElementById("but1L").disabled = "disabled";
+        }
+        else if (obj.id=="but2L") {            
+            obj.disabled = "disabled";
+            document.getElementById("but2R").disabled = "disabled";
+        }
+        else if (obj.id=="but2R") {            
+            obj.disabled = "disabled";
+            document.getElementById("but2L").disabled = "disabled";
+        }
+        else if (obj.id=="but3L") {            
+            obj.disabled = "disabled";
+            document.getElementById("but3R").disabled = "disabled";
+        }
+        else if (obj.id=="but3R") {            
+            obj.disabled = "disabled";
+            document.getElementById("but3L").disabled = "disabled";
+        }
+        else if (obj.id=="but4L") {            
+            obj.disabled = "disabled";
+            document.getElementById("but4R").disabled = "disabled";
+        }
+        else if (obj.id=="but4R") {            
+            obj.disabled = "disabled";
+            document.getElementById("but4L").disabled = "disabled";
+        }
+        else if (obj.id == "but5L") {            
+            obj.disabled = "disabled";
+            document.getElementById("but5R").disabled = "disabled";
+        }
+        else if (obj.id=="but5R") {            
+            obj.disabled = "disabled";
+            document.getElementById("but5L").disabled = "disabled";
+        }
+    }
+</script>

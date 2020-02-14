@@ -1,0 +1,14 @@
+﻿@page
+@model GameUserDB.Pages.NoScoreModel
+@{
+    ViewData["Title"] = "Дополнительные очки";
+}
+
+<h2>@Model.Message</h2>
+<form method="post">
+    <button type="submit" class="btn btn-info">Получить еще 150 очков!</button>
+    <br />
+    <a asp-page="Index" class="btn btn-link">Вернуться</a>
+</form>
+
+

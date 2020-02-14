@@ -1,0 +1,37 @@
+﻿@page
+@model GameUserDB.Pages.UserManage.IndexModel
+@{
+    ViewData["Title"] = "Пользователи";
+}
+
+
+<br />
+<a asp-page="CreateUser" class="btn btn-sm btn-primary">Добавить пользователя</a>
+<br />
+<br />
+<div>
+    <table class="table table-hover table-striped">
+        <tr><th>Email</th><th>Позиция ряда</th><th>Счет</th><th>Последовательность</th><th></th></tr>
+        @foreach (var user in Model.ApUsers)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@user.Position.ToString()</td>
+                <td>@user.Score.ToString()</td>
+                <td>@user.Sequence</td>
+                <td>
+                    <form method="post">
+                        <a asp-page="EditUser" class="btn btn-sm btn-primary"
+                           asp-route-id="@user.Id">Изменить</a>
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                asp-route-id="@user.Id" asp-page-handler="Del">
+                            Удалить
+                        </button>
+                        <a asp-page="ChangeUserRole" class="btn btn-sm btn-default"
+                           asp-route-id="@user.Id">Доступ</a>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

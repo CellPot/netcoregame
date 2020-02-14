@@ -1,0 +1,22 @@
+﻿@page "{id}"
+@model GameUserDB.Pages.UserManage.ChangeUserRoleModel
+@{
+    ViewData["Title"] = "Роли";
+}
+
+<h2>Сменить роли пользователя @Model.ApUser.Email</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-route-id="@Model.ApUser.Id">
+            <div class="form-group">
+                @foreach (IdentityRole role in Model.AllRoles)
+                {
+                    <input type="checkbox" class="checkbox" name="selectedRoles" value="@role.Name"
+                           @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+                    }
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</div>
